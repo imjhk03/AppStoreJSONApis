@@ -11,6 +11,8 @@
 		C12B9ECD2461C879006EADE4 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9ECC2461C879006EADE4 /* BaseListController.swift */; };
 		C1419A6C2461C9D80045A028 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */; };
 		C1419A6E2461CBAA0045A028 /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A6D2461CBAA0045A028 /* AppsHorizontalController.swift */; };
+		C1419A702461DF2F0045A028 /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A6F2461DF2F0045A028 /* AppRowCell.swift */; };
+		C1419A722461E1A30045A028 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A712461E1A30045A028 /* Extensions.swift */; };
 		C1C6EDC724613AFB003B99BC /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6EDC624613AFB003B99BC /* SearchResultCell.swift */; };
 		C1C6EDCC24614329003B99BC /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6EDCB24614328003B99BC /* UIView+Layout.swift */; };
 		C1C6EDCE246145EC003B99BC /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6EDCD246145EC003B99BC /* VerticalStackView.swift */; };
@@ -35,6 +37,8 @@
 		C12B9ECC2461C879006EADE4 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		C1419A6D2461CBAA0045A028 /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
+		C1419A6F2461DF2F0045A028 /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
+		C1419A712461E1A30045A028 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C1C6EDC624613AFB003B99BC /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		C1C6EDCB24614328003B99BC /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		C1C6EDCD246145EC003B99BC /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */,
+				C1419A6F2461DF2F0045A028 /* AppRowCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			children = (
 				C1C6EDCB24614328003B99BC /* UIView+Layout.swift */,
 				C1C6EDCD246145EC003B99BC /* VerticalStackView.swift */,
+				C1419A712461E1A30045A028 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,9 +320,11 @@
 				C1C6EDCE246145EC003B99BC /* VerticalStackView.swift in Sources */,
 				C1C6EDD42461B4FA003B99BC /* Service.swift in Sources */,
 				C1C6EDCC24614329003B99BC /* UIView+Layout.swift in Sources */,
+				C1419A722461E1A30045A028 /* Extensions.swift in Sources */,
 				C12B9ECD2461C879006EADE4 /* BaseListController.swift in Sources */,
 				C1F98B6E2460977B00CD29F4 /* SceneDelegate.swift in Sources */,
 				C1419A6E2461CBAA0045A028 /* AppsHorizontalController.swift in Sources */,
+				C1419A702461DF2F0045A028 /* AppRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
