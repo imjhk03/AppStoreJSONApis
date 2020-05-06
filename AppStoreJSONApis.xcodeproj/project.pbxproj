@@ -18,6 +18,8 @@
 		C1419A782461EA990045A028 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A772461EA990045A028 /* AppsHeaderCell.swift */; };
 		C1BB35CD24626572005D9E7C /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB35CC24626572005D9E7C /* AppGroup.swift */; };
 		C1C5873C24631EEC00A0510B /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C5873B24631EEC00A0510B /* SocialApp.swift */; };
+		C1C5873E24632D5A00A0510B /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C5873D24632D5A00A0510B /* HorizontalSnappingController.swift */; };
+		C1C58740246332B200A0510B /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C5873F246332B200A0510B /* BetterSnappingLayout.swift */; };
 		C1C6EDC724613AFB003B99BC /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6EDC624613AFB003B99BC /* SearchResultCell.swift */; };
 		C1C6EDCC24614329003B99BC /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6EDCB24614328003B99BC /* UIView+Layout.swift */; };
 		C1C6EDCE246145EC003B99BC /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C6EDCD246145EC003B99BC /* VerticalStackView.swift */; };
@@ -49,6 +51,8 @@
 		C1419A772461EA990045A028 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		C1BB35CC24626572005D9E7C /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		C1C5873B24631EEC00A0510B /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
+		C1C5873D24632D5A00A0510B /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
+		C1C5873F246332B200A0510B /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		C1C6EDC624613AFB003B99BC /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		C1C6EDCB24614328003B99BC /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		C1C6EDCD246145EC003B99BC /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				C1C6EDCB24614328003B99BC /* UIView+Layout.swift */,
 				C1C6EDCD246145EC003B99BC /* VerticalStackView.swift */,
 				C1419A712461E1A30045A028 /* Extensions.swift */,
+				C1C5873F246332B200A0510B /* BetterSnappingLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				C12B9EC92461C7FD006EADE4 /* Apps */,
 				C1F98B7F2460983E00CD29F4 /* BaseTabBarController.swift */,
 				C12B9ECC2461C879006EADE4 /* BaseListController.swift */,
+				C1C5873D24632D5A00A0510B /* HorizontalSnappingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				C1F98B832461370400CD29F4 /* AppsSearchController.swift in Sources */,
 				C1419A6C2461C9D80045A028 /* AppsGroupCell.swift in Sources */,
 				C1C6EDC724613AFB003B99BC /* SearchResultCell.swift in Sources */,
+				C1C5873E24632D5A00A0510B /* HorizontalSnappingController.swift in Sources */,
 				C1C6EDCE246145EC003B99BC /* VerticalStackView.swift in Sources */,
 				C1C6EDD42461B4FA003B99BC /* Service.swift in Sources */,
 				C1419A762461E95A0045A028 /* AppsHeaderHorizontalController.swift in Sources */,
@@ -344,6 +351,7 @@
 				C1419A782461EA990045A028 /* AppsHeaderCell.swift in Sources */,
 				C1F98B6E2460977B00CD29F4 /* SceneDelegate.swift in Sources */,
 				C1419A6E2461CBAA0045A028 /* AppsHorizontalController.swift in Sources */,
+				C1C58740246332B200A0510B /* BetterSnappingLayout.swift in Sources */,
 				C1419A702461DF2F0045A028 /* AppRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
