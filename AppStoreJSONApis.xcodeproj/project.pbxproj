@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C10F5A5824645CBF003E414B /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F5A5724645CBF003E414B /* AppDetailCell.swift */; };
+		C10F5A5A2464658F003E414B /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F5A592464658F003E414B /* PreviewCell.swift */; };
+		C10F5A5C246466A3003E414B /* PreviewScreenshotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F5A5B246466A3003E414B /* PreviewScreenshotsController.swift */; };
 		C12B9ECB2461C80F006EADE4 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9ECA2461C80F006EADE4 /* AppsPageController.swift */; };
 		C12B9ECD2461C879006EADE4 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9ECC2461C879006EADE4 /* BaseListController.swift */; };
 		C1419A6C2461C9D80045A028 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */; };
@@ -43,6 +45,8 @@
 		2662434C5D0726A6596933EF /* Pods_AppStoreJSONApis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreJSONApis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E265F7A699D281A09DD18C /* Pods-AppStoreJSONApis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApis.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApis/Pods-AppStoreJSONApis.debug.xcconfig"; sourceTree = "<group>"; };
 		C10F5A5724645CBF003E414B /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
+		C10F5A592464658F003E414B /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		C10F5A5B246466A3003E414B /* PreviewScreenshotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotsController.swift; sourceTree = "<group>"; };
 		C12B9ECA2461C80F006EADE4 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
 		C12B9ECC2461C879006EADE4 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				C10F5A5724645CBF003E414B /* AppDetailCell.swift */,
+				C10F5A592464658F003E414B /* PreviewCell.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				C1EBE1AB2463B95900EC58A8 /* AppDetailViewController.swift */,
+				C10F5A5B246466A3003E414B /* PreviewScreenshotsController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 				C1C5873C24631EEC00A0510B /* SocialApp.swift in Sources */,
 				C12B9ECB2461C80F006EADE4 /* AppsPageController.swift in Sources */,
 				C1C6EDD124614DB1003B99BC /* SearchResult.swift in Sources */,
+				C10F5A5C246466A3003E414B /* PreviewScreenshotsController.swift in Sources */,
 				C1F98B702460977B00CD29F4 /* ViewController.swift in Sources */,
 				C1F98B6C2460977B00CD29F4 /* AppDelegate.swift in Sources */,
 				C1F98B832461370400CD29F4 /* AppsSearchController.swift in Sources */,
@@ -374,6 +381,7 @@
 				C1419A782461EA990045A028 /* AppsHeaderCell.swift in Sources */,
 				C10F5A5824645CBF003E414B /* AppDetailCell.swift in Sources */,
 				C1F98B6E2460977B00CD29F4 /* SceneDelegate.swift in Sources */,
+				C10F5A5A2464658F003E414B /* PreviewCell.swift in Sources */,
 				C1419A6E2461CBAA0045A028 /* AppsHorizontalController.swift in Sources */,
 				C1C58740246332B200A0510B /* BetterSnappingLayout.swift in Sources */,
 				C1419A702461DF2F0045A028 /* AppRowCell.swift in Sources */,
