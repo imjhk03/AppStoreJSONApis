@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10F5A5824645CBF003E414B /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F5A5724645CBF003E414B /* AppDetailCell.swift */; };
 		C12B9ECB2461C80F006EADE4 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9ECA2461C80F006EADE4 /* AppsPageController.swift */; };
 		C12B9ECD2461C879006EADE4 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9ECC2461C879006EADE4 /* BaseListController.swift */; };
 		C1419A6C2461C9D80045A028 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */; };
@@ -41,6 +42,7 @@
 		24936A5D1C2BE542200AC784 /* Pods-AppStoreJSONApis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApis.release.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApis/Pods-AppStoreJSONApis.release.xcconfig"; sourceTree = "<group>"; };
 		2662434C5D0726A6596933EF /* Pods_AppStoreJSONApis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreJSONApis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E265F7A699D281A09DD18C /* Pods-AppStoreJSONApis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApis.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApis/Pods-AppStoreJSONApis.debug.xcconfig"; sourceTree = "<group>"; };
+		C10F5A5724645CBF003E414B /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 		C12B9ECA2461C80F006EADE4 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
 		C12B9ECC2461C879006EADE4 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C10F5A5624645CB0003E414B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C10F5A5724645CBF003E414B /* AppDetailCell.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		C12B9EC92461C7FD006EADE4 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 		C1419A6A2461C9C30045A028 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				C10F5A5624645CB0003E414B /* Details */,
 				C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */,
 				C1419A6F2461DF2F0045A028 /* AppRowCell.swift */,
 				C1419A732461E8310045A028 /* AppsPageHeader.swift */,
@@ -361,6 +372,7 @@
 				C12B9ECD2461C879006EADE4 /* BaseListController.swift in Sources */,
 				C1BB35CD24626572005D9E7C /* AppGroup.swift in Sources */,
 				C1419A782461EA990045A028 /* AppsHeaderCell.swift in Sources */,
+				C10F5A5824645CBF003E414B /* AppDetailCell.swift in Sources */,
 				C1F98B6E2460977B00CD29F4 /* SceneDelegate.swift in Sources */,
 				C1419A6E2461CBAA0045A028 /* AppsHorizontalController.swift in Sources */,
 				C1C58740246332B200A0510B /* BetterSnappingLayout.swift in Sources */,
