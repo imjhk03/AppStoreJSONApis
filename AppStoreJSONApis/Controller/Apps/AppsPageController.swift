@@ -48,21 +48,18 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         
         dispatchGroup.enter()
         Service.shared.fetchGames { (appGroup, err) in
-            print("Done with games")
             dispatchGroup.leave()
             group1 = appGroup
         }
         
         dispatchGroup.enter()
         Service.shared.fetchTopGrossing { (appGroup, err) in
-            print("Done with top grossing")
             dispatchGroup.leave()
             group2 = appGroup
         }
         
         dispatchGroup.enter()
         Service.shared.fetchAppGroup(urlString: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/25/explicit.json") { (appGroup, err) in
-            print("Done with free games")
             dispatchGroup.leave()
             group3 = appGroup
         }
@@ -76,8 +73,6 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         
         // completion
         dispatchGroup.notify(queue: .main) {
-            print("completed your dispatch group task...")
-            
             self.activityIndicatorView.stopAnimating()
             
             self.groups = [group1, group2, group3].compactMap {$0} // compact out any nil valued group
