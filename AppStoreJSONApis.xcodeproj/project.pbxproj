@@ -21,6 +21,7 @@
 		C10F5A6A246487E4003E414B /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F5A69246487E4003E414B /* TodayCell.swift */; };
 		C10F5A6C2464911F003E414B /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F5A6B2464911F003E414B /* AppFullscreenController.swift */; };
 		C10F5A6E246492ED003E414B /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10F5A6D246492ED003E414B /* AppFullscreenDescriptionCell.swift */; };
+		C1166D3524E92E620094AADC /* AppsCompositionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1166D3424E92E620094AADC /* AppsCompositionalView.swift */; };
 		C12B9ECB2461C80F006EADE4 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9ECA2461C80F006EADE4 /* AppsPageController.swift */; };
 		C12B9ECD2461C879006EADE4 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9ECC2461C879006EADE4 /* BaseListController.swift */; };
 		C1419A6C2461C9D80045A028 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */; };
@@ -76,6 +77,7 @@
 		C10F5A69246487E4003E414B /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		C10F5A6B2464911F003E414B /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
 		C10F5A6D246492ED003E414B /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
+		C1166D3424E92E620094AADC /* AppsCompositionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCompositionalView.swift; sourceTree = "<group>"; };
 		C12B9ECA2461C80F006EADE4 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
 		C12B9ECC2461C879006EADE4 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		C1419A6B2461C9D80045A028 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
@@ -178,9 +180,18 @@
 			path = Today;
 			sourceTree = "<group>";
 		};
+		C1166D3324E92E440094AADC /* Compositional */ = {
+			isa = PBXGroup;
+			children = (
+				C1166D3424E92E620094AADC /* AppsCompositionalView.swift */,
+			);
+			path = Compositional;
+			sourceTree = "<group>";
+		};
 		C12B9EC92461C7FD006EADE4 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				C1166D3324E92E440094AADC /* Compositional */,
 				C1EBE1AA2463B94B00EC58A8 /* Details */,
 				C12B9ECA2461C80F006EADE4 /* AppsPageController.swift */,
 				C1419A6D2461CBAA0045A028 /* AppsHorizontalController.swift */,
@@ -460,6 +471,7 @@
 				C10F5A6E246492ED003E414B /* AppFullscreenDescriptionCell.swift in Sources */,
 				C1C6EDC724613AFB003B99BC /* SearchResultCell.swift in Sources */,
 				C10E0C8E24C006C300344A0D /* TodayItem.swift in Sources */,
+				C1166D3524E92E620094AADC /* AppsCompositionalView.swift in Sources */,
 				C1AF646A248DE9CE0026A3FC /* AppFullscreenHeaderCell.swift in Sources */,
 				C1C5873E24632D5A00A0510B /* HorizontalSnappingController.swift in Sources */,
 				C1C6EDCE246145EC003B99BC /* VerticalStackView.swift in Sources */,
@@ -636,6 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
 				INFOPLIST_FILE = AppStoreJSONApis/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -655,6 +668,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
 				INFOPLIST_FILE = AppStoreJSONApis/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
