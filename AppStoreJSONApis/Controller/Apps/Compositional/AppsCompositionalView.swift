@@ -11,7 +11,19 @@ import SwiftUI
 class CompositionalController: UICollectionViewController {
     
     init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+        item.contentInsets.bottom = 16
+        item.contentInsets.trailing = 16
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(300)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.contentInsets.leading = 32
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        super.init(collectionViewLayout: layout)
     }
     
     required init?(coder: NSCoder) {
@@ -19,7 +31,7 @@ class CompositionalController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 8
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
