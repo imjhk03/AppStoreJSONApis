@@ -18,6 +18,7 @@ class AppsHeaderCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        imageView.image = #imageLiteral(resourceName: "holiday")
         companyLabel.textColor = .blue
         titleLabel.numberOfLines = 2
         
