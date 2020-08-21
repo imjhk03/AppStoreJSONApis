@@ -25,11 +25,22 @@ class CompositionalController: UICollectionViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
                 section.contentInsets.leading = 16
+                
+                let kind = UICollectionView.elementKindSectionHeader
+                section.boundarySupplementaryItems = [
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: kind, alignment: .topLeading)
+                ]
+                
                 return section
             }
         }
         
         super.init(collectionViewLayout: layout)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+        return header
     }
     
     static func topSection() -> NSCollectionLayoutSection {
@@ -49,7 +60,7 @@ class CompositionalController: UICollectionViewController {
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 4
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,15 +74,33 @@ class CompositionalController: UICollectionViewController {
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallCellId", for: indexPath)
-            cell.backgroundColor = .blue
             return cell
         }
     }
     
+    class CompositionalHeader: UICollectionReusableView {
+        
+        let label = UILabel(text: "Editor's Choise Games", font: .boldSystemFont(ofSize: 32))
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            
+            addSubview(label)
+            label.fillSuperview()
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    }
+    
+    let headerId = "headerId"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.register(CompositionalHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: "cellId")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "smallCellId")
+        collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: "smallCellId")
         collectionView.backgroundColor = .systemBackground
         navigationItem.title = "Apps"
         navigationController?.navigationBar.prefersLargeTitles = true
