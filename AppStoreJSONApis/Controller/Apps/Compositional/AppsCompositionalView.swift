@@ -99,54 +99,6 @@ class CompositionalController: UICollectionViewController {
         return 0
     }
     
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if section == 0 {
-//            return socialApps.count
-//        } else if section == 1 {
-//            return games?.feed.results.count ?? 0
-//        } else if section == 2{
-//            return topGrossingApps?.feed.results.count ?? 0
-//        } else {
-//            return freeApps?.feed.results.count ?? 0
-//        }
-//    }
-    
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let appId: String
-//        if indexPath.section == 0 {
-//            appId = socialApps[indexPath.item].id
-//        } else if indexPath.section == 1 {
-//            appId = games?.feed.results[indexPath.item].id ?? ""
-//        } else if indexPath.section == 2 {
-//            appId = topGrossingApps?.feed.results[indexPath.item].id ?? ""
-//        } else {
-//            appId = freeApps?.feed.results[indexPath.item].id ?? ""
-//        }
-//        let appDetailController = AppDetailViewController(appId: appId)
-//        navigationController?.pushViewController(appDetailController, animated: true)
-//    }
-    
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        switch indexPath.section {
-//        case 0:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! AppsHeaderCell
-//            cell.app = self.socialApps[indexPath.item]
-//            return cell
-//        default:
-//            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "smallCellId", for: indexPath) as! AppRowCell
-//            var appGroup: AppGroup?
-//            if indexPath.section == 1 {
-//                appGroup = games
-//            } else if indexPath.section == 2 {
-//                appGroup = topGrossingApps
-//            } else {
-//                appGroup = freeApps
-//            }
-//            cell.app = appGroup?.feed.results[indexPath.item]
-//            return cell
-//        }
-//    }
-    
     class CompositionalHeader: UICollectionReusableView {
         
         let label = UILabel(text: "Editor's Choise Games", font: .boldSystemFont(ofSize: 32))
@@ -195,10 +147,46 @@ class CompositionalController: UICollectionViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallCellId", for: indexPath) as! AppRowCell
             cell.app = object
             
+            cell.getButton.addTarget(self, action: #selector(self.handleGet), for: .primaryActionTriggered)
+            
             return cell
         }
         
         return nil
+    }
+    
+    @objc func handleGet(button: UIView) {
+        
+        var superview = button.superview
+        
+        // i want to reach the parent cell of the get button
+        while superview != nil {
+            if let cell = superview as? UICollectionViewCell {
+                guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
+                guard let objectIClickedOnto = diffableDataSource.itemIdentifier(for: indexPath) else { return }
+                
+                var snapshot = diffableDataSource.snapshot()
+                snapshot.deleteItems([objectIClickedOnto])
+                diffableDataSource.apply(snapshot)
+                
+            }
+            superview = superview?.superview
+        }
+        
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let object = diffableDataSource.itemIdentifier(for: indexPath)
+        if let object = object as? SocialApp {
+            let appDetailController = AppDetailViewController(appId: object.id)
+            navigationController?.pushViewController(appDetailController, animated: true)
+        } else if let object = object as? FeedResult {
+            let appDetailController = AppDetailViewController(appId: object.id)
+            navigationController?.pushViewController(appDetailController, animated: true)
+        }
+        
     }
     
     private func setupDiffableDatasource() {
