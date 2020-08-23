@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UINavigationController(rootViewController: CompositionalController()) //BaseTabBarController() // Place your root view controller here
+            window.rootViewController = BaseTabBarController() // Place your root view controller here
+            //UINavigationController(rootViewController: CompositionalController())
             self.window = window
             window.makeKeyAndVisible()
         }

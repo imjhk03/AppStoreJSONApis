@@ -1,11 +1,15 @@
 # AppStoreJSONApis
  
+ ![Screenshot](/images/ScreenShot.jpeg)
+ 
 ### URLs
 * https://rss.itunes.apple.com/ko-kr
 * https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
 
 ### What Techniques I used
 * CGAffineTransform
+
+ ![SwiftUI](/images/SwiftUI.png)
 
 ### UIcollectionView CompositionalLayout
 Layout Apps page using a single CollectionView with a Compositional Layout
