@@ -182,36 +182,64 @@ class CompositionalController: UICollectionViewController {
     enum AppSection {
         case topSocial
         case grossing
+        case games
     }
     
-    lazy var diffableDataSource: UICollectionViewDiffableDataSource<AppSection, SocialApp> = .init(collectionView: self.collectionView) { (collectionView, indexPath, socialApp) -> UICollectionViewCell? in
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! AppsHeaderCell
-        cell.app = socialApp
+    lazy var diffableDataSource: UICollectionViewDiffableDataSource<AppSection, AnyHashable> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewCell? in
+        if let object = object as? SocialApp {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! AppsHeaderCell
+            cell.app = object
+            
+            return cell
+        } else if let object = object as? FeedResult {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallCellId", for: indexPath) as! AppRowCell
+            cell.app = object
+            
+            return cell
+        }
         
-        return cell
+        return nil
     }
     
     private func setupDiffableDatasource() {
-        
-        // adding data
-//        var snapshot = diffableDataSource.snapshot()
-//        snapshot.appendSections([.topSocial])
-//        snapshot.appendItems([
-//            SocialApp(id: "id0", name: "Facebook", imageUrl: "image0", tagline: "What a tagline you want"),
-//            SocialApp(id: "id1", name: "Instagram", imageUrl: "image0", tagline: "tagline0")
-//        ], toSection: .topSocial)
-//
-//        diffableDataSource.apply(snapshot)
-        
         collectionView.dataSource = diffableDataSource
         
-        Service.shared.fetchSocialApps { (socialApps, err) in
-            var snapshot = self.diffableDataSource.snapshot()
-            snapshot.appendSections([.topSocial])
-            snapshot.appendItems(socialApps ?? [], toSection: .topSocial)
+        diffableDataSource.supplementaryViewProvider = .some({ (collectionView, kind, indexPath) -> UICollectionReusableView? in
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.headerId, for: indexPath) as! CompositionalHeader
             
-//            self.socialApps = socialApps ?? []
-            self.diffableDataSource.apply(snapshot)
+            let snapshot = self.diffableDataSource.snapshot()
+            let object = self.diffableDataSource.itemIdentifier(for: indexPath)
+            let section = snapshot.sectionIdentifier(containingItem: object!)!
+            
+            if section == .games {
+                header.label.text = "Games"
+            } else {
+                header.label.text = "Top Grossing"
+            }
+            
+            return header
+        })
+        
+        Service.shared.fetchSocialApps { (socialApps, err) in
+            
+            Service.shared.fetchTopGrossing(completion: { (appGroup, err) in
+                
+                Service.shared.fetchGames { (gamesGroup, err) in
+                    var snapshot = self.diffableDataSource.snapshot()
+                    
+                    // top social
+                    snapshot.appendSections([.topSocial, .games, .grossing])
+                    snapshot.appendItems(socialApps ?? [], toSection: .topSocial)
+                    
+                    // top Grossing
+                    let object = appGroup?.feed.results ?? []
+                    snapshot.appendItems(object, toSection: .grossing)
+                    
+                    snapshot.appendItems(gamesGroup?.feed.results ?? [], toSection: .games)
+                    
+                    self.diffableDataSource.apply(snapshot)
+                }
+            })
         }
     }
     
