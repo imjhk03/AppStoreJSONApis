@@ -1,6 +1,13 @@
+
 # AppStoreJSONApis
- 
+![Swift Version](https://img.shields.io/badge/Swift-5-orange.svg)
+![Xcode Version](https://img.shields.io/badge/Xcode-11.6-lightgrey.svg)
+![iOS Version](https://img.shields.io/badge/iOS-13.4%2B-brightgreen.svg)
+
  ![Screenshot](/images/ScreenShot.jpeg)
+
+This project is a mock up AppStore Application using JSON APIs from Apple's iTunes Search API. This application is built with [LBTA course](https://www.letsbuildthatapp.com/course/AppStore%20JSON%20APIs).
+
 
 ### What Techniques I used
 * UICollectionView, UITableView
