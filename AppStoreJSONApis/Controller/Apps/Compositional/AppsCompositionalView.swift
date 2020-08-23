@@ -127,14 +127,42 @@ class CompositionalController: UICollectionViewController {
         navigationItem.title = "Apps"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        navigationItem.rightBarButtonItem = .init(title: "Fetch Top Free", style: .plain, target: self, action: #selector(handleFetchTopFree))
+        
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        
 //        fetchApps()
         setupDiffableDatasource()
+    }
+    
+    @objc fileprivate func handleRefresh() {
+        collectionView.refreshControl?.endRefreshing()
+        
+        var snapshot = self.diffableDataSource.snapshot()
+        
+        snapshot.deleteSections([.topFree])
+        
+        self.diffableDataSource.apply(snapshot)
+    }
+    
+    @objc fileprivate func handleFetchTopFree() {
+        Service.shared.fetchAppGroup(urlString: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/25/explicit.json") { (appGroup, err) in
+            
+            var snapshot = self.diffableDataSource.snapshot()
+            
+            snapshot.insertSections([.topFree], afterSection: .topSocial)
+            snapshot.appendItems(appGroup?.feed.results ?? [], toSection: .topFree)
+            
+            self.diffableDataSource.apply(snapshot)
+        }
     }
     
     enum AppSection {
         case topSocial
         case grossing
         case games
+        case topFree
     }
     
     lazy var diffableDataSource: UICollectionViewDiffableDataSource<AppSection, AnyHashable> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewCell? in
@@ -201,8 +229,10 @@ class CompositionalController: UICollectionViewController {
             
             if section == .games {
                 header.label.text = "Games"
-            } else {
+            } else if section == .grossing {
                 header.label.text = "Top Grossing"
+            } else {
+                header.label.text = "Top Free"
             }
             
             return header
